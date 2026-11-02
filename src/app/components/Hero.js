@@ -1,10 +1,15 @@
 
+import Image from "next/image";
+
 export default function Hero({ nama, tagline }) {
   return (
     <section className="mb-10 flex flex-col items-center gap-6 md:flex-row md:gap-7">
-      <img
+      <Image
         src="/foto-reyhan.jpeg"
         alt="Foto M Reyhan Purnomo Putra"
+        width={176}
+        height={176}
+        loading="eager"
         className="h-44 w-44 shrink-0 rounded-full border-4 border-rose-600 object-cover"
       />
 
