@@ -1,4 +1,4 @@
-import ProyekCard from "@/components/ProyekCard";
+import FilterProyek from "@/components/FilterProyek";
 import { proyek } from "@/data/proyek";
 
 export const metadata = {
@@ -8,18 +8,14 @@ export const metadata = {
 
 export default function DaftarProyek() {
   return (
-    <main className="flex-1 bg-[#f1f8ed] px-4 py-10 text-[#203b5d]">
+    <main className="w-full flex-1 bg-[#f1f8ed] px-4 py-10 text-[#203b5d] dark:bg-gray-900 dark:text-gray-100">
       <div className="mx-auto max-w-6xl">
         <h1 className="text-3xl font-bold md:text-4xl">Proyek Saya</h1>
-        <p className="mt-3 max-w-3xl text-lg text-[#30435d]">
+        <p className="mt-3 max-w-3xl text-lg text-[#30435d] dark:text-gray-300">
           Setiap project adalah kesempatan untuk belajar, mencoba ide, dan
           mengembangkan keterampilan. Pilih kartu untuk membaca detailnya.
         </p>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {proyek.map((item) => (
-            <ProyekCard key={item.slug} proyek={item} />
-          ))}
-        </div>
+        <FilterProyek proyek={proyek} />
       </div>
     </main>
   );

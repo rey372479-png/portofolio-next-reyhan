@@ -18,7 +18,7 @@ const proyekTerbaru = proyek.slice(-3);
 
 export default function Home() {
   return (
-    <main className="flex-1 bg-[#f1f8ed] text-[#203b5d]">
+    <main className="flex-1 bg-[#f1f8ed] text-[#203b5d] dark:bg-gray-900 dark:text-gray-100">
       <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-12">
         <Hero
           nama="M Reyhan Purnomo Putra"
@@ -37,7 +37,7 @@ export default function Home() {
         />
 
         <section className="mt-10">
-          <h2 className="mb-4 text-2xl font-bold text-[#203b5d]">
+          <h2 className="mb-4 text-2xl font-bold text-[#203b5d] dark:text-sky-200">
             Keahlian
           </h2>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">

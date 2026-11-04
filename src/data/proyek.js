@@ -3,6 +3,7 @@ export const proyek = [
     slug: "manajemen-siswa",
     judul: "Manajemen Siswa",
     kategori: "Web",
+    kategoriFilter: ["HTML", "CSS", "JavaScript"],
     teknologi: ["Next.js", "TypeScript", "CSS"],
     deskripsi:
       "Website untuk mengelola dan menampilkan data siswa secara lebih terstruktur.",
@@ -17,6 +18,7 @@ export const proyek = [
     slug: "manajemen-magang",
     judul: "Manajemen Magang",
     kategori: "Web",
+    kategoriFilter: ["HTML", "CSS", "JavaScript"],
     teknologi: ["Next.js", "React", "CSS"],
     deskripsi:
       "Sistem untuk membantu pengelolaan data dan kegiatan siswa selama proses magang.",
@@ -31,6 +33,7 @@ export const proyek = [
     slug: "nextjs-v2",
     judul: "NextJS V2",
     kategori: "Web",
+    kategoriFilter: ["CSS", "JavaScript"],
     teknologi: ["Next.js", "TypeScript", "App Router"],
     deskripsi:
       "Project website menggunakan Next.js sebagai pengembangan dari project sebelumnya.",
@@ -45,6 +48,7 @@ export const proyek = [
     slug: "my-app",
     judul: "My App",
     kategori: "Web",
+    kategoriFilter: ["HTML", "CSS", "JavaScript"],
     teknologi: ["Web Application", "Next.js"],
     deskripsi:
       "Project aplikasi yang dikerjakan sebagai bagian dari pembelajaran web development.",
@@ -63,6 +67,7 @@ export const proyek = [
     slug: "mobile-ui-design",
     judul: "Mobile UI Design",
     kategori: "Mobile",
+    kategoriFilter: ["HTML", "CSS"],
     teknologi: ["Figma", "Mobile UI"],
     deskripsi:
       "Desain interface aplikasi mobile yang dibuat menggunakan Figma.",
@@ -81,6 +86,7 @@ export const proyek = [
     slug: "web-ui-design",
     judul: "Web UI Design",
     kategori: "Design",
+    kategoriFilter: ["HTML", "CSS"],
     teknologi: ["Figma", "Web UI"],
     deskripsi:
       "Desain interface website dengan memperhatikan struktur dan tampilan pengguna.",

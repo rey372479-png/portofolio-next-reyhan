@@ -14,10 +14,10 @@ export default function Hero({ nama, tagline }) {
       />
 
       <div>
-        <h1 className="text-3xl font-bold leading-tight text-[#203b5d] sm:text-4xl md:text-5xl">
+        <h1 className="text-3xl font-bold leading-tight text-[#203b5d] dark:text-sky-200 sm:text-4xl md:text-5xl">
           Halo, saya {nama}!
         </h1>
-        <p className="mt-3 text-base text-[#203b5d] sm:text-lg">
+        <p className="mt-3 text-base text-[#203b5d] dark:text-gray-200 sm:text-lg">
           {tagline}
         </p>
       </div>

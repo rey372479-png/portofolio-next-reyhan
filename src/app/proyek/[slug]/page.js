@@ -26,16 +26,16 @@ export default async function DetailProyek({ params }) {
   }
 
   return (
-    <main className="flex-1 bg-[#f1f8ed] px-4 py-10 text-[#203b5d]">
+    <main className="flex-1 bg-[#f1f8ed] px-4 py-10 text-[#203b5d] dark:bg-gray-900 dark:text-gray-100">
       <article className="mx-auto max-w-3xl">
         <Link
           href="/proyek"
-          className="text-sm font-semibold text-[#30435d] hover:underline"
+          className="text-sm font-semibold text-[#30435d] hover:underline dark:text-gray-300"
         >
           &larr; Kembali ke daftar proyek
         </Link>
         <h1 className="mt-4 text-3xl font-bold md:text-4xl">{item.judul}</h1>
-        <p className="mt-2 text-[#30435d]">
+        <p className="mt-2 text-[#30435d] dark:text-gray-300">
           {item.kategori} &middot; {item.teknologi.join(" · ")}
         </p>
         {item.gambar ? (
@@ -49,8 +49,10 @@ export default async function DetailProyek({ params }) {
           />
         ) : null}
         <p className="mt-6 text-lg leading-8">{item.deskripsi}</p>
-        <p className="mt-3 leading-7 text-[#30435d]">{item.detail}</p>
-        <h2 className="mt-8 text-2xl font-bold text-[#203b5d]">
+        <p className="mt-3 leading-7 text-[#30435d] dark:text-gray-300">
+          {item.detail}
+        </p>
+        <h2 className="mt-8 text-2xl font-bold text-[#203b5d] dark:text-sky-200">
           Tentang Project
         </h2>
         <ul className="mt-3 list-disc space-y-2 pl-5">
@@ -63,7 +65,7 @@ export default async function DetailProyek({ params }) {
             href={item.tautan.href}
             target="_blank"
             rel="noreferrer"
-            className="mt-6 inline-block rounded-lg bg-[#203b5d] px-5 py-3 font-semibold text-white hover:bg-[#30435d]"
+            className="mt-6 inline-block rounded-lg bg-[#203b5d] px-5 py-3 font-semibold text-white hover:bg-[#30435d] dark:bg-sky-200 dark:text-gray-900 dark:hover:bg-sky-100"
           >
             {item.tautan.label}
           </a>

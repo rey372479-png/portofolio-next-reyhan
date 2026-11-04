@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import TombolTema from "@/components/TombolTema";
 
 const menu = [
   { href: "/", label: "Beranda" },
@@ -19,29 +20,33 @@ export default function Navbar() {
         <Link href="/" className="text-xl font-bold">
           M Reyhan Purnomo Putra
         </Link>
-        <ul className="flex flex-wrap gap-x-5 gap-y-2">
-          {menu.map((item) => {
-            const aktif =
-              item.href === "/"
-                ? pathname === "/"
-                : pathname === item.href || pathname.startsWith(`${item.href}/`);
-            const kelas = aktif
-              ? "font-bold text-white underline underline-offset-8"
-              : "text-gray-200 hover:text-white";
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+          <ul className="flex flex-wrap gap-x-5 gap-y-2">
+            {menu.map((item) => {
+              const aktif =
+                item.href === "/"
+                  ? pathname === "/"
+                  : pathname === item.href ||
+                    pathname.startsWith(`${item.href}/`);
+              const kelas = aktif
+                ? "font-bold text-white underline underline-offset-8"
+                : "text-gray-200 hover:text-white";
 
-            return (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={kelas}
-                  aria-current={aktif ? "page" : undefined}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={kelas}
+                    aria-current={aktif ? "page" : undefined}
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+          <TombolTema />
+        </div>
       </nav>
     </header>
   );
