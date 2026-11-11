@@ -8,6 +8,11 @@ const nextConfig = {
         hostname: "egvwmurflslpuhfcgwil.supabase.co",
         pathname: "/storage/v1/object/public/project-images/**",
       },
+      {
+        protocol: "https",
+        hostname: "doqxztfmlaovfckgcyvo.supabase.co",
+        pathname: "/storage/v1/object/public/project-images/**",
+      },
     ],
   },
   turbopack: {
