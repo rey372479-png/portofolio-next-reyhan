@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const nilaiAwal = {
   nama: "",
@@ -124,12 +125,12 @@ export default function FormKontak() {
         />
         {error.pesan && <p className="mt-1 text-sm text-[#c1121f]">{error.pesan}</p>}
       </div>
-      <button
+      <Button
         type="submit"
-        className="rounded-lg bg-[#203b5d] px-5 py-3 font-semibold text-white transition hover:bg-[#30435d] dark:bg-sky-200 dark:text-gray-900 dark:hover:bg-sky-100"
+        size="lg"
       >
         Kirim Pesan
-      </button>
+      </Button>
       {terkirim && (
         <p className="rounded-lg bg-green-100 p-3 text-sm font-semibold text-green-800 dark:bg-green-900/40 dark:text-green-200">
           Pesan berhasil divalidasi. Terima kasih sudah menghubungi saya.

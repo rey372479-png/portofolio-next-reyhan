@@ -1,12 +1,17 @@
 import FilterProyek from "@/components/FilterProyek";
-import { proyek } from "@/data/proyek";
+import { supabase } from "@/lib/supabase";
 
 export const metadata = {
   title: "Proyek",
   description: "Kumpulan proyek web dan desain karya M Reyhan Purnomo Putra.",
 };
 
-export default function DaftarProyek() {
+export default async function DaftarProyek() {
+  const { data: proyek, error } = await supabase
+    .from("projects")
+    .select("*")
+    .order("created_at");
+
   return (
     <main className="w-full flex-1 bg-[#f1f8ed] px-4 py-10 text-[#203b5d] dark:bg-gray-900 dark:text-gray-100">
       <div className="mx-auto max-w-6xl">
@@ -15,7 +20,13 @@ export default function DaftarProyek() {
           Setiap project adalah kesempatan untuk belajar, mencoba ide, dan
           mengembangkan keterampilan. Pilih kartu untuk membaca detailnya.
         </p>
-        <FilterProyek proyek={proyek} />
+        {error ? (
+          <p className="mt-8 rounded-xl border border-red-300 bg-red-50 p-4 text-red-800">
+            Proyek belum dapat dimuat: {error.message}
+          </p>
+        ) : (
+          <FilterProyek proyek={proyek ?? []} />
+        )}
       </div>
     </main>
   );

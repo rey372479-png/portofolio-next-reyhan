@@ -1,11 +1,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { proyek } from "@/data/proyek";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import { supabase } from "@/lib/supabase";
+
+async function ambilProyek(slug) {
+  const { data, error } = await supabase
+    .from("projects")
+    .select("*")
+    .eq("slug", slug)
+    .single();
+
+  if (error && error.code !== "PGRST116") {
+    throw new Error(`Gagal mengambil proyek: ${error.message}`);
+  }
+
+  return data;
+}
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const item = proyek.find((project) => project.slug === slug);
+  const item = await ambilProyek(slug);
 
   if (!item) {
     return { title: "Proyek tidak ditemukan" };
@@ -19,7 +35,7 @@ export async function generateMetadata({ params }) {
 
 export default async function DetailProyek({ params }) {
   const { slug } = await params;
-  const item = proyek.find((project) => project.slug === slug);
+  const item = await ambilProyek(slug);
 
   if (!item) {
     notFound();
@@ -35,12 +51,15 @@ export default async function DetailProyek({ params }) {
           &larr; Kembali ke daftar proyek
         </Link>
         <h1 className="mt-4 text-3xl font-bold md:text-4xl">{item.judul}</h1>
-        <p className="mt-2 text-[#30435d] dark:text-gray-300">
-          {item.kategori} &middot; {item.teknologi.join(" · ")}
-        </p>
-        {item.gambar ? (
+        <div className="mt-3 flex items-center gap-3">
+          <Badge>{item.kategori}</Badge>
+          <span className="text-sm text-[#30435d] dark:text-gray-300">
+            {item.minggu}
+          </span>
+        </div>
+        {item.gambar_url ? (
           <Image
-            src={item.gambar}
+            src={item.gambar_url}
             alt={`Gambar proyek ${item.judul}`}
             width={640}
             height={420}
@@ -49,27 +68,15 @@ export default async function DetailProyek({ params }) {
           />
         ) : null}
         <p className="mt-6 text-lg leading-8">{item.deskripsi}</p>
-        <p className="mt-3 leading-7 text-[#30435d] dark:text-gray-300">
-          {item.detail}
-        </p>
-        <h2 className="mt-8 text-2xl font-bold text-[#203b5d] dark:text-sky-200">
-          Tentang Project
+        <Separator />
+        <h2 className="text-2xl font-bold text-[#203b5d] dark:text-sky-200">
+          Yang Saya Pelajari
         </h2>
         <ul className="mt-3 list-disc space-y-2 pl-5">
-          {item.fitur.map((fitur) => (
+          {(item.fitur ?? []).map((fitur) => (
             <li key={fitur}>{fitur}</li>
           ))}
         </ul>
-        {item.tautan ? (
-          <a
-            href={item.tautan.href}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-6 inline-block rounded-lg bg-[#203b5d] px-5 py-3 font-semibold text-white hover:bg-[#30435d] dark:bg-sky-200 dark:text-gray-900 dark:hover:bg-sky-100"
-          >
-            {item.tautan.label}
-          </a>
-        ) : null}
       </article>
     </main>
   );

@@ -1,4 +1,10 @@
 import FormKontak from "@/components/FormKontak";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 export const metadata = {
   title: "Kontak",
@@ -17,21 +23,28 @@ export default function Kontak() {
         </p>
 
         <div className="mt-8 grid gap-6 md:grid-cols-3">
-          <section className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:col-span-2">
-            <h2 className="mb-4 text-2xl font-bold">Kirim pesan</h2>
-            <FormKontak />
-            <p className="mt-3 text-sm text-[#30435d] dark:text-gray-300">
-              Formulir ini hanya melakukan validasi di browser dan belum
-              menyimpan atau mengirim pesan ke server.
-            </p>
-          </section>
+          <Card className="md:col-span-2">
+            <CardHeader>
+              <CardTitle>Kirim pesan</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <FormKontak />
+              <p className="mt-3 text-sm">
+                Formulir ini hanya melakukan validasi di browser dan belum
+                menyimpan atau mengirim pesan ke server.
+              </p>
+            </CardContent>
+          </Card>
 
-          <section className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-            <h2 className="mb-4 text-2xl font-bold">Temukan Saya</h2>
-            <p className="mb-4 text-[#30435d] dark:text-gray-300">
-              Hubungi atau lihat aktivitas saya melalui:
-            </p>
-            <ul className="space-y-3">
+          <Card>
+            <CardHeader>
+              <CardTitle>Temukan Saya</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-4">
+                Hubungi atau lihat aktivitas saya melalui:
+              </p>
+              <ul className="space-y-3">
               <li>
                 <a
                   href="https://github.com/rey372479-png"
@@ -50,8 +63,9 @@ export default function Kontak() {
                   rey372479@gmail.com
                 </a>
               </li>
-            </ul>
-          </section>
+              </ul>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </main>

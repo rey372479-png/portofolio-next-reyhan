@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function TombolTema() {
   const [gelap, setGelap] = useState(false);
@@ -12,13 +13,15 @@ export default function TombolTema() {
   }
 
   return (
-    <button
+    <Button
       type="button"
+      variant="outline"
+      size="sm"
       onClick={gantiTema}
-      className="rounded-lg border border-white px-3 py-1 text-sm font-semibold text-white transition hover:border-[#c1121f] hover:bg-[#c1121f]"
+      className="border-white text-white hover:border-[#c1121f] hover:bg-[#c1121f] hover:text-white"
       aria-pressed={gelap}
     >
       {gelap ? "Mode Terang" : "Mode Gelap"}
-    </button>
+    </Button>
   );
 }

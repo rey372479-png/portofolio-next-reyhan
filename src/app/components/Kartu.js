@@ -1,9 +1,18 @@
 
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+
 export default function Kartu({ judul, anak }) {
   return (
-    <section className="rounded-xl border border-gray-200 bg-white p-5 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-      <h2 className="mb-4 text-2xl font-bold text-[#203b5d] dark:text-sky-200">{judul}</h2>
-      <div className="text-base leading-7 text-[#30435d] dark:text-gray-300">{anak}</div>
-    </section>
+    <Card>
+      <CardHeader>
+        <CardTitle>{judul}</CardTitle>
+      </CardHeader>
+      <CardContent>{anak}</CardContent>
+    </Card>
   );
 }
