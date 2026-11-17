@@ -18,13 +18,13 @@ async function ambilDataAdmin() {
     ]);
 
   if (proyekError) {
-    console.error("Admin projects query failed", {
+    console.warn("Admin projects query failed", {
       code: proyekError.code ?? "unknown",
       status: proyekError.status ?? "unknown",
     });
   }
   if (pesanError) {
-    console.error("Admin messages query failed", {
+    console.warn("Admin messages query failed", {
       code: pesanError.code ?? "unknown",
       status: pesanError.status ?? "unknown",
     });
