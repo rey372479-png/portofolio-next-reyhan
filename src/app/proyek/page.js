@@ -22,7 +22,7 @@ export default async function DaftarProyek() {
         </p>
         {error ? (
           <p className="mt-8 rounded-xl border border-red-300 bg-red-50 p-4 text-red-800">
-            Proyek belum dapat dimuat: {error.message}
+            Proyek belum dapat dimuat. Silakan coba lagi.
           </p>
         ) : (
           <FilterProyek proyek={proyek ?? []} />

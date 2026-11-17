@@ -13,7 +13,11 @@ async function ambilProyek(slug) {
     .single();
 
   if (error && error.code !== "PGRST116") {
-    throw new Error(`Gagal mengambil proyek: ${error.message}`);
+    console.error("Project detail query failed", {
+      code: error.code ?? "unknown",
+      status: error.status ?? "unknown",
+    });
+    throw new Error("Proyek belum dapat dimuat. Silakan coba lagi.");
   }
 
   return data;

@@ -44,7 +44,7 @@ export default async function Home() {
           </h2>
           {skillsError ? (
             <p className="rounded-xl border border-red-300 bg-red-50 p-4 text-red-800">
-              Keahlian belum dapat dimuat: {skillsError.message}
+              Keahlian belum dapat dimuat. Silakan coba lagi.
             </p>
           ) : (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -65,7 +65,7 @@ export default async function Home() {
           </h2>
           {projectsError ? (
             <p className="rounded-xl border border-red-300 bg-red-50 p-4 text-red-800">
-              Proyek belum dapat dimuat: {projectsError.message}
+              Proyek belum dapat dimuat. Silakan coba lagi.
             </p>
           ) : (
             <div className="grid gap-6 md:grid-cols-3">
@@ -76,6 +76,14 @@ export default async function Home() {
           )}
           <Button asChild href="/proyek" className="mt-6">
             Lihat semua proyek
+          </Button>
+        </section>
+
+        <section className="mt-10 rounded-xl border border-[#203b5d] bg-white p-6 dark:border-sky-200 dark:bg-gray-800">
+          <h2 className="text-2xl font-bold">Buku Tamu</h2>
+          <p className="mt-2">Punya pesan atau saran? Tinggalkan di buku tamu.</p>
+          <Button asChild href="/buku-tamu" className="mt-4">
+            Tulis pesan
           </Button>
         </section>
       </div>

@@ -33,6 +33,9 @@ export default function Kontak() {
                 Formulir ini hanya melakukan validasi di browser dan belum
                 menyimpan atau mengirim pesan ke server.
               </p>
+              <a href="/buku-tamu" className="mt-3 inline-block font-semibold underline">
+                Kunjungi buku tamu untuk meninggalkan pesan publik
+              </a>
             </CardContent>
           </Card>
 
