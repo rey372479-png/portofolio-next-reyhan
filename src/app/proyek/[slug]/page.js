@@ -46,18 +46,18 @@ export default async function DetailProyek({ params }) {
   }
 
   return (
-    <main className="flex-1 bg-[#f1f8ed] px-4 py-10 text-[#203b5d] dark:bg-gray-900 dark:text-gray-100">
+    <main className="flex-1 bg-slate-950 px-4 py-10 text-white">
       <article className="mx-auto max-w-3xl">
         <Link
           href="/proyek"
-          className="text-sm font-semibold text-[#30435d] hover:underline dark:text-gray-300"
+          className="text-sm font-semibold text-slate-300 hover:underline"
         >
           &larr; Kembali ke daftar proyek
         </Link>
         <h1 className="mt-4 text-3xl font-bold md:text-4xl">{item.judul}</h1>
         <div className="mt-3 flex items-center gap-3">
           <Badge>{item.kategori}</Badge>
-          <span className="text-sm text-[#30435d] dark:text-gray-300">
+          <span className="text-sm text-slate-300">
             {item.minggu}
           </span>
         </div>
@@ -73,7 +73,7 @@ export default async function DetailProyek({ params }) {
         ) : null}
         <p className="mt-6 text-lg leading-8">{item.deskripsi}</p>
         <Separator />
-        <h2 className="text-2xl font-bold text-[#203b5d] dark:text-sky-200">
+        <h2 className="text-2xl font-bold text-white">
           Yang Saya Pelajari
         </h2>
         <ul className="mt-3 list-disc space-y-2 pl-5">

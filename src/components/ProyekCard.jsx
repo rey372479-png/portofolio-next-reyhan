@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function ProyekCard({ proyek }) {
   return (
-    <Card className="overflow-hidden transition hover:-translate-y-1 hover:shadow-md">
+    <Card className="overflow-hidden border-slate-700 bg-slate-900 transition hover:-translate-y-1 hover:border-sky-500 hover:shadow-lg">
       {proyek.gambar_url ? (
         <Image
           src={proyek.gambar_url}

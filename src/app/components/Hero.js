@@ -12,14 +12,14 @@ export default function Hero({ nama, tagline }) {
         width={176}
         height={176}
         loading="eager"
-        className="h-44 w-44 shrink-0 rounded-full border-4 border-rose-600 object-cover"
+        className="h-44 w-44 shrink-0 rounded-full border-4 border-sky-500 object-cover"
       />
 
       <div>
-        <h1 className="text-3xl font-bold leading-tight text-[#203b5d] dark:text-sky-200 sm:text-4xl md:text-5xl">
+        <h1 className="text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
           Halo, saya {nama}!
         </h1>
-        <p className="mt-3 text-base text-[#203b5d] dark:text-gray-200 sm:text-lg">
+        <p className="mt-3 text-base text-slate-300 sm:text-lg">
           {tagline}
         </p>
         <div className="mt-5 flex justify-center gap-3 md:justify-start">

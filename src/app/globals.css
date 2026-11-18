@@ -2,8 +2,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #f1f8ed;
-  --foreground: #203b5d;
+  --background: #020617;
+  --foreground: #ffffff;
 }
 
 @theme inline {

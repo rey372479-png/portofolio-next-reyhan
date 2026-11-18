@@ -20,7 +20,7 @@ export default async function Home() {
   ]);
 
   return (
-    <main className="flex-1 bg-[#f1f8ed] text-[#203b5d] dark:bg-gray-900 dark:text-gray-100">
+    <main className="flex-1 bg-slate-950 text-white">
       <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:py-12">
         <Hero
           nama="M Reyhan Purnomo Putra"
@@ -39,7 +39,7 @@ export default async function Home() {
         />
 
         <section className="mt-10">
-          <h2 className="mb-4 text-2xl font-bold text-[#203b5d] dark:text-sky-200">
+          <h2 className="mb-4 text-2xl font-bold text-white">
             Keahlian
           </h2>
           {skillsError ? (
@@ -60,7 +60,7 @@ export default async function Home() {
         </section>
 
         <section className="mt-10">
-          <h2 className="mb-4 text-2xl font-bold text-[#203b5d]">
+          <h2 className="mb-4 text-2xl font-bold text-white">
             Proyek Terbaru
           </h2>
           {projectsError ? (
@@ -79,7 +79,7 @@ export default async function Home() {
           </Button>
         </section>
 
-        <section className="mt-10 rounded-xl border border-[#203b5d] bg-white p-6 dark:border-sky-200 dark:bg-gray-800">
+        <section className="mt-10 rounded-xl border border-slate-700 bg-slate-900 p-6">
           <h2 className="text-2xl font-bold">Buku Tamu</h2>
           <p className="mt-2">Punya pesan atau saran? Tinggalkan di buku tamu.</p>
           <Button asChild href="/buku-tamu" className="mt-4">

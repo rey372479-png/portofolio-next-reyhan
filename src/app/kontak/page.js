@@ -14,10 +14,10 @@ export const metadata = {
 
 export default function Kontak() {
   return (
-    <main className="w-full flex-1 bg-[#f1f8ed] px-4 py-10 text-[#203b5d] dark:bg-gray-900 dark:text-gray-100">
+    <main className="w-full flex-1 bg-slate-950 px-4 py-10 text-white">
       <div className="mx-auto max-w-5xl">
         <h1 className="text-3xl font-bold md:text-4xl">Hubungi Saya</h1>
-        <p className="mt-3 max-w-2xl text-lg text-[#30435d] dark:text-gray-300">
+        <p className="mt-3 max-w-2xl text-lg text-slate-300">
           Saya terbuka untuk berdiskusi tentang project, pengembangan web,
           desain, dan ide teknologi.
         </p>

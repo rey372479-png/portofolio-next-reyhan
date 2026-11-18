@@ -48,8 +48,8 @@ export default function FilterProyek({ proyek }) {
             onClick={() => setKategori(item)}
             className={`${kelasTombol} ${
               kategori === item
-                ? "border-[#c1121f] bg-[#c1121f] text-white"
-                : "border-[#203b5d] text-[#203b5d] hover:bg-[#203b5d] hover:text-white dark:border-sky-200 dark:text-sky-200 dark:hover:bg-sky-200 dark:hover:text-gray-900"
+                ? "border-sky-400 bg-sky-400 text-slate-950"
+                : "border-slate-600 bg-slate-900 text-slate-200 hover:border-sky-400 hover:text-white"
             }`}
             aria-pressed={kategori === item}
           >
@@ -69,13 +69,13 @@ export default function FilterProyek({ proyek }) {
             value={kata}
             onChange={(event) => setKata(event.target.value)}
             placeholder="Cari judul atau deskripsi"
-            className="w-full rounded-lg border border-gray-300 bg-white p-2 text-[#203b5d] outline-none focus:border-[#203b5d] dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100"
+            className="w-full rounded border border-slate-600 bg-slate-900 p-2.5 text-white outline-none placeholder:text-slate-500 focus:border-sky-400"
           />
           {kata && (
             <button
               type="button"
               onClick={() => setKata("")}
-              className="rounded-lg border border-[#203b5d] px-4 py-2 text-sm font-semibold text-[#203b5d] hover:bg-[#203b5d] hover:text-white dark:border-sky-200 dark:text-sky-200 dark:hover:bg-sky-200 dark:hover:text-gray-900"
+              className="rounded border border-slate-600 px-4 py-2 text-sm font-semibold text-slate-200 hover:border-sky-400 hover:text-white"
             >
               Hapus Pencarian
             </button>
@@ -83,7 +83,7 @@ export default function FilterProyek({ proyek }) {
         </div>
       </div>
 
-      <p className="mt-4 text-sm text-[#30435d] dark:text-gray-300">
+      <p className="mt-4 text-sm text-slate-300">
         Menampilkan {hasil.length} dari {proyek.length} proyek
       </p>
 

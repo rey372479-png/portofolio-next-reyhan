@@ -42,7 +42,7 @@ export default function TentangPage() {
   ];
 
   return (
-    <main className="flex-1 bg-[#f1f8ed] px-4 py-10 text-[#203b5d] dark:bg-gray-900 dark:text-gray-100">
+    <main className="flex-1 bg-slate-950 px-4 py-10 text-white">
       <div className="mx-auto max-w-5xl space-y-6">
         <Hero
           nama="M Reyhan Purnomo Putra"
@@ -91,7 +91,7 @@ export default function TentangPage() {
             <div className="overflow-x-auto">
               <table className="w-full min-w-[500px] border-collapse text-left">
                 <thead>
-                  <tr className="bg-[#203b5d] text-white">
+                  <tr className="bg-slate-800 text-white">
                     <th className="px-3 py-3">Hari</th>
                     <th className="px-3 py-3">Waktu</th>
                     <th className="px-3 py-3">Kegiatan</th>
@@ -101,7 +101,7 @@ export default function TentangPage() {
                   {jadwalBelajar.map((jadwal) => (
                     <tr
                       key={jadwal.hari}
-                      className="border-b border-gray-100 dark:border-gray-700"
+                      className="border-b border-slate-800"
                     >
                       <td className="px-3 py-4 font-medium">{jadwal.hari}</td>
                       <td className="px-3 py-4">{jadwal.waktu}</td>
