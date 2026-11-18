@@ -41,11 +41,13 @@ async function ambilDataAdmin() {
 export default async function KelolaPage() {
   if (!(await isAdminAuthenticated())) {
     return (
-      <main className="w-full flex-1 bg-[#f1f8ed] px-4 py-10 text-[#203b5d] dark:bg-gray-900 dark:text-gray-100">
+      <main className="w-full flex-1 bg-slate-950 px-4 py-10 text-white">
         <div className="mx-auto max-w-2xl">
-          <Card>
-            <CardHeader><CardTitle>Masuk ke halaman kelola</CardTitle></CardHeader>
-            <CardContent><LoginAdmin /></CardContent>
+          <h1 className="text-center text-3xl font-bold md:text-4xl">Kelola Data</h1>
+          <p className="mt-2 text-center text-slate-400">Halaman ini khusus pemilik portofolio.</p>
+          <Card className="mt-6 border-slate-700 bg-slate-900">
+            <CardHeader><CardTitle className="text-white">Masuk Admin</CardTitle></CardHeader>
+            <CardContent className="text-slate-300"><LoginAdmin /></CardContent>
           </Card>
         </div>
       </main>
@@ -55,22 +57,22 @@ export default async function KelolaPage() {
   const { proyek, pesan, proyekError, pesanError } = await ambilDataAdmin();
 
   return (
-    <main className="w-full flex-1 bg-[#f1f8ed] px-4 py-10 text-[#203b5d] dark:bg-gray-900 dark:text-gray-100">
+    <main className="w-full flex-1 bg-slate-950 px-4 py-10 text-white">
       <div className="mx-auto max-w-6xl space-y-8">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
-            <h1 className="text-3xl font-bold md:text-4xl">Kelola Portfolio</h1>
-            <p className="mt-2 text-[#30435d] dark:text-gray-300">CRUD proyek dan moderasi buku tamu.</p>
+            <h1 className="text-3xl font-bold md:text-4xl">Kelola Data</h1>
+            <p className="mt-2 text-slate-400">CRUD proyek dan moderasi buku tamu.</p>
           </div>
           <div className="flex gap-3">
-            <Link href="/proyek" className="font-semibold underline">Lihat situs</Link>
-            <form action={logoutAdmin}><button className="font-semibold text-[#c1121f] underline">Keluar</button></form>
+            <Link href="/proyek" className="rounded border border-slate-600 px-3 py-2 text-sm font-semibold text-white hover:border-sky-400">Lihat situs</Link>
+            <form action={logoutAdmin}><button className="rounded border border-slate-600 px-3 py-2 text-sm font-semibold text-red-300 hover:border-red-400">Keluar</button></form>
           </div>
         </div>
 
-        <Card>
-          <CardHeader><CardTitle>Tambah proyek</CardTitle></CardHeader>
-          <CardContent><FormProyek /></CardContent>
+        <Card className="mx-auto max-w-2xl border-slate-700 bg-slate-900">
+          <CardHeader><CardTitle className="text-center text-white">Tambah Proyek</CardTitle></CardHeader>
+          <CardContent className="text-slate-300"><FormProyek /></CardContent>
         </Card>
 
         <section>
@@ -78,9 +80,9 @@ export default async function KelolaPage() {
           {proyekError ? <p className="text-red-700">Proyek belum dapat dimuat. Silakan coba lagi.</p> : (
             <div className="space-y-5">
               {proyek.map((item) => (
-                <Card key={item.id}>
-                  <CardHeader><CardTitle>{item.judul}</CardTitle></CardHeader>
-                  <CardContent>
+                <Card key={item.id} className="mx-auto max-w-2xl border-slate-700 bg-slate-900">
+                  <CardHeader><CardTitle className="text-white">{item.judul}</CardTitle></CardHeader>
+                  <CardContent className="text-slate-300">
                     <FormProyek proyek={item} />
                     <AlertDialog
                       title={`Hapus ${item.judul}?`}
@@ -103,8 +105,8 @@ export default async function KelolaPage() {
             <div className="space-y-4">
               {pesan.length === 0 && <p>Belum ada pesan.</p>}
               {pesan.map((item) => (
-                <Card key={item.id}>
-                  <CardContent className="pt-5">
+                <Card key={item.id} className="border-slate-700 bg-slate-900">
+                  <CardContent className="pt-5 text-slate-300">
                     <div className="flex flex-wrap items-start justify-between gap-3">
                       <div>
                         <p className="font-bold">{item.nama}</p>

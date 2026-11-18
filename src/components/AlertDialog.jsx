@@ -18,11 +18,11 @@ export default function AlertDialog({ children, title, description, action, fiel
       <dialog
         ref={dialogRef}
         aria-modal="true"
-        className="max-w-md rounded-xl border border-gray-200 bg-white p-0 text-[#203b5d] shadow-xl backdrop:bg-black/50 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100"
+        className="max-w-md rounded border border-slate-600 bg-slate-900 p-0 text-white shadow-2xl backdrop:bg-black/70"
       >
         <div className="p-6">
           <h2 className="text-xl font-bold">{title}</h2>
-          <p className="mt-2 text-sm text-[#30435d] dark:text-gray-300">{description}</p>
+          <p className="mt-2 text-sm text-slate-300">{description}</p>
           <form action={action} className="mt-6 flex justify-end gap-3">
             {fields}
             <Button type="button" variant="outline" onClick={() => dialogRef.current?.close()}>Batal</Button>

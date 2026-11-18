@@ -5,7 +5,7 @@ import { tambahProyek, ubahProyek } from "@/app/actions";
 import SubmitButton from "@/components/SubmitButton";
 
 const kelasInput =
-  "mt-1 w-full rounded-lg border border-gray-300 bg-white p-2 text-[#203b5d] dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100";
+  "mt-2 w-full rounded border border-slate-600 bg-slate-900 px-3 py-2.5 text-white outline-none placeholder:text-slate-500 focus:border-sky-400";
 const stateAwal = { ok: false, message: "", errors: {}, values: {} };
 
 export default function FormProyek({ proyek = null }) {
@@ -22,9 +22,12 @@ export default function FormProyek({ proyek = null }) {
 
   return (
     <form action={formAction} className="space-y-4">
+      {proyek && (
+        <h2 className="text-center text-2xl font-bold text-white">Ubah Proyek</h2>
+      )}
       {proyek && <input type="hidden" name="id" value={proyek.id} />}
       <div>
-        <label htmlFor={`judul-${proyek?.id || "baru"}`} className="block font-semibold">
+        <label htmlFor={`judul-${proyek?.id || "baru"}`} className="block text-sm font-semibold text-slate-100">
           Judul proyek
         </label>
         <input
